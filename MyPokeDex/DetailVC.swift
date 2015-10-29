@@ -17,7 +17,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var curPokeDetailLbl: UILabel!
     @IBOutlet weak var curPokeTypeLbl: UILabel!
     @IBOutlet weak var curPokeDefenseLbl: UILabel!
-    
+    @IBOutlet weak var curPokeWeightLbl: UILabel!
     @IBOutlet weak var curPokeHeightLbl: UILabel!
     @IBOutlet weak var curPokeId: UILabel!
     @IBOutlet weak var curEvoImg: UIImageView!
@@ -27,12 +27,41 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.nameLbl.text = pokemon.name
-        self.curPokeIMg.image = UIImage(named: "\(pokemon.pokedexId)")
+        nameLbl.text = pokemon.name
+        let img = UIImage(named: "\(pokemon.pokedexId)")
+        curPokeIMg.image = img
+        curEvoImg.image = img
         
         pokemon.downLoadPokemonDetails { () -> () in
-            
+            self.updateUI()
         }
+    }
+    
+    func updateUI(){
+        
+        curPokeDetailLbl.text = pokemon.description
+        curPokeTypeLbl.text = pokemon.type
+        curPokeDefenseLbl.text = pokemon.defense
+        curPokeHeightLbl.text = pokemon.height
+        curPokeWeightLbl.text = pokemon.weight
+        curPokeId.text = "\(pokemon.pokedexId)"
+        nextEvoImg.image = UIImage(named:pokemon.nextEvoId)
+        
+        if pokemon.nextEvoId == "" {
+            evoTextLbl.text = "No Evolutions"
+            nextEvoImg.hidden = true
+        } else {
+            nextEvoImg.hidden = false
+            nextEvoImg.image = UIImage(named: pokemon.nextEvoId)
+            var str = "Next Evolution:\(pokemon.nextEvoText)"
+            
+            if pokemon.nextEvoLvl != "" {
+                str += " - LVL \(pokemon.nextEvoLvl)"
+            }
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
