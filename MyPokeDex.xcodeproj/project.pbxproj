@@ -20,6 +20,7 @@
 		8FAC428D1BE1089C00E62FE0 /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FAC428C1BE1089C00E62FE0 /* Pokemon Solid.ttf */; };
 		8FAC428F1BE1214500E62FE0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAC428E1BE1214500E62FE0 /* DetailVC.swift */; };
 		8FE753231BE1607400C2A074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE753221BE1607400C2A074 /* Constants.swift */; };
+		8FE753291BE2715C00C2A074 /* MovesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE753281BE2715C00C2A074 /* MovesView.swift */; };
 		A01C4DBB4C9BB9DD81DBCF0B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222AEBDD6C87A93152364009 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		8FAC428C1BE1089C00E62FE0 /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
 		8FAC428E1BE1214500E62FE0 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		8FE753221BE1607400C2A074 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8FE753281BE2715C00C2A074 /* MovesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesView.swift; sourceTree = "<group>"; };
 		A0F552F9F46508920BAE5AEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F52CE51AF94B681ED1623B60 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8FAC42861BE023FD00E62FE0 /* PokeCell.swift */,
+				8FE753281BE2715C00C2A074 /* MovesView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				8FE753231BE1607400C2A074 /* Constants.swift in Sources */,
 				8FAC42891BE02EE400E62FE0 /* csv.swift in Sources */,
 				8FAC428F1BE1214500E62FE0 /* DetailVC.swift in Sources */,
+				8FE753291BE2715C00C2A074 /* MovesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

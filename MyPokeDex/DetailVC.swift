@@ -23,7 +23,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var curEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
     @IBOutlet weak var evoTextLbl: UILabel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +36,7 @@ class DetailVC: UIViewController {
             self.updateUI()
         }
     }
-    
+        
     func updateUI(){
         
         curPokeDetailLbl.text = pokemon.description
@@ -57,11 +57,9 @@ class DetailVC: UIViewController {
             
             if pokemon.nextEvoLvl != "" {
                 str += " - LVL \(pokemon.nextEvoLvl)"
+                self.evoTextLbl.text = str
             }
         }
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,8 +70,17 @@ class DetailVC: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    @IBAction func segmentPressed(sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            curPokeDetailLbl.text = pokemon.description
+        case 1:
+            let abs = pokemon.abilites.joinWithSeparator(",")
+            curPokeDetailLbl.text = abs
+        default:
+            break
+        }
 
-    
-
+    }
 }

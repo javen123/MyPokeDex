@@ -23,6 +23,7 @@ class Pokemon {
     private var _nextEvoId:String!
     private var _nextEvoLvl:String!
     private var _pokemonUrl:String!
+    private var _abilities:[String]!
     
     var name:String {
         if _name == nil {
@@ -96,6 +97,13 @@ class Pokemon {
             _nextEvoLvl = ""
         }
         return _nextEvoLvl
+    }
+    
+    var abilites:[String] {
+        if _abilities == nil {
+            _abilities = [""]
+        }
+        return _abilities
     }
     
     init(name:String, pokedexId:Int) {
@@ -173,8 +181,14 @@ class Pokemon {
                 }else {
                     self._description = ""
                 }
-                
-
+            
+                if let abs = data["abilities"] as? [Dictionary<String, String>] where abs.count > 0 {
+                    for ab in abs {
+                        self._abilities = [String]()
+                        self._abilities.append(ab["name"]!)
+                    }
+                    print(self._abilities)
+                }
             }
         }
     }
